@@ -47,8 +47,9 @@ resource "oci_core_subnet" "dev" {
   prohibit_public_ip_on_vnic  = true
   dns_label                   = each.value.dns_label
 } */
-/*
+
+
 output "network_load_balancer"{
     description = "id of network load balancer"
     value       = { for k, v in module.network_load_balancer : k => v }
-}*/
+}
