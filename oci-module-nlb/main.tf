@@ -8,7 +8,7 @@ terraform {
   required_version = ">= 1.0.0"
 }
 
-  module "network_load_balancer" {
+module "network_load_balancer" {
   source = "./modules/network_load_balancer"
   for_each = var.network_load_balancers
     network_load_balancers   = var.network_load_balancers
@@ -28,7 +28,7 @@ terraform {
     ip_address = var.ip_address
 }
 
-
+/*
 
 resource "oci_core_vcn" "internal" {
   dns_label      = "internal"
@@ -46,9 +46,9 @@ resource "oci_core_subnet" "dev" {
   display_name                = each.value.display_name
   prohibit_public_ip_on_vnic  = true
   dns_label                   = each.value.dns_label
-} 
-
+} */
+/*
 output "network_load_balancer"{
     description = "id of network load balancer"
     value       = { for k, v in module.network_load_balancer : k => v }
-}
+}*/
